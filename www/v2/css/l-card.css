@@ -1,0 +1,33 @@
+/*$card-width: 200px;*/
+/*$card-height: 400px;*/
+
+
+#card {
+    width: 200px;
+    height: 400px;
+
+}
+
+/*.c4x6 {*/
+    /*width: $card-width;*/
+    /*height: $card-height;*/
+
+/*}*/
+
+/*.c2x3 {*/
+    /*width: $card-width;*/
+    /*height: $card-height;*/
+
+/*}*/
+
+/*.c6x4 {*/
+    /*width: $card-width;*/
+    /*height: $card-height;*/
+
+/*}*/
+
+/*.c3x2 {*/
+    /*width: $card-width;*/
+    /*height: $card-height;*/
+/*}*/
+
