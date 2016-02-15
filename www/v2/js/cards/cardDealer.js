@@ -20,7 +20,7 @@ Card.prototype.toHtml = function() {
 };
 
 Card.loadAll = function(cardData) {
-    console.log(cardData);
+    console.log(typeof (cardData));
 
     cardData.sort(function(a,b) {
         return (new Date(b.publishedOn)) - (new Date(a.publishedOn));
@@ -57,6 +57,8 @@ Card.buildDeck = function() {
         Card.loadAll(JSON.parse(localStorage.rawData));
         buildDeck.initIndexPage();
     } else {
+        console.log("Fetching deck");
+
         $.ajax({
             type: 'GET',
             dataType: 'text',
@@ -64,24 +66,14 @@ Card.buildDeck = function() {
             url: 'data/deck.json',
             success: function (rawJSON) {
                 console.log('Initialize rawJSON to localStorage');
-                console.log(rawJSON);
+                console.log("rawJSON: " + rawJSON);
 
-                localStorage.rawData = JSON.stringify(rawJSON);
-                Card.loadAll(rawJSON);
+                localStorage.rawData = rawJSON;
+
+                Card.loadAll(JSON.parse(rawJSON));
                 buildDeck.initIndexPage();
             }
         });
-
-        <!-- alternate ajax call -->
-        //$.getJSON('data/hackeripsum.json').done(function(rawJSON){
-        //    console.log('Initial rawJSON to localStorage');
-        //    console.log(rawJSON);
-        //
-        //    localStorage.rawData = JSON.stringify(rawJSON);
-        //    Card.loadAll(rawJSON);
-        //    buildDeck.initIndexPage();
-        //});
     }
-
 };
 

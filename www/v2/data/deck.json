@@ -13,7 +13,7 @@
     "author":      "Tyler Edwards",
     "authorUrl":   "http://www.sample.com/project-03",
     "publishedOn": "2016-02-03",
-    "body":        "<p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio<img src="proj/img-proj/che_guevara_black_white_line_art-555px.png"></p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p>"
+    "body":        "<p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio<img src=\"proj/img-proj/che_guevara_black_white_line_art-555px.png\"></p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p><p>This will be the thrid project in the portfolio</p>"
   },
   {
     "title":       "Project 02",
