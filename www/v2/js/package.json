@@ -1,0 +1,15 @@
+{
+  "name": "mvc-blog",
+  "version": "1.0.0",
+  "description": "The portfolio project of Jeremy T Edwards",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Jeremy Edwards",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  }
+}
