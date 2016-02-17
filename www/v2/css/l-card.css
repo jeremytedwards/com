@@ -1,0 +1,37 @@
+/*
+*  sudo gem install compass
+*  http://thesassway.com/beginner/getting-started-with-sass-and-compass
+*
+*/
+.card {
+  width: 400px;
+  height: 500px;
+  background-color: rgba(192, 192, 192, 0.2);
+  border-radius: 25px;
+  border: 2px solid silver;
+  float: left;
+  margin-right: 5px;
+  margin-top: 5px;
+  padding: .5% 1%;
+  overflow: scroll; }
+
+.c4x6 {
+  width: 500px;
+  height: 400px; }
+
+.c2x3 {
+  width: 200px;
+  height: 250px; }
+
+.c6x4 {
+  width: 500px;
+  height: 400px; }
+
+.c3x2 {
+  width: 250px;
+  height: 200px; }
+
+.card-preloader {
+  display: none; }
+
+

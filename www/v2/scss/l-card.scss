@@ -1,12 +1,12 @@
 /*
 *  sudo gem install compass
 *  http://thesassway.com/beginner/getting-started-with-sass-and-compass
+*
 */
 
 $card-width: 400px;
 $card-height: 500px;
 $gutter: 5px;
-
 
 .card {
   width: $card-width;
