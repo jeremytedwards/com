@@ -57,7 +57,8 @@
             });
 
             Card.loadAll(JSON.parse(localStorage.rawData));
-            buildDeck.initIndexPage();
+
+            buildDeck.initIndexPage();   //next();
         } else {
             console.log("Fetching deck");
 
@@ -73,7 +74,8 @@
                     localStorage.rawData = rawJSON;
 
                     Card.loadAll(JSON.parse(rawJSON));
-                    buildDeck.initIndexPage();
+
+                    buildDeck.initIndexPage();  //next();
                 }
             });
         }
@@ -93,10 +95,10 @@
 
         // Produce an array of unique author names.
         Card.allAuthors = function() {
-            return Card.all.map(function(article) {
+            return Card.all.map(function(card) {
 
                 //  console.log(article.author);
-                    return article.author;
+                    return card.author;
                 })
                 .reduce(function(a,b){
                     if (a.indexOf(b) < 0 ) a.push(b);

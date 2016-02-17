@@ -1,10 +1,8 @@
 (function(module) {
     var portfolioController = {};
 
-    Card.buildDeck();
-
     portfolioController.index = function() {
-        Card.loadAll(buildDeck.initIndexPage);
+        Card.buildDeck();
 
         $('main > section').hide();
         $('#deck-template').show();
