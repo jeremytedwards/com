@@ -4,5 +4,5 @@ page('/', indexController.index);
 page('/portfolio', portfolioController.index);
 page('/about', aboutController.index);
 
-//Run your routing
+// Run your routing
 page();
