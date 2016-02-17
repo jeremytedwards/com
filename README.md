@@ -1,3 +1,13 @@
+# Update 7 - Functional Programming
+Scopes and closures and IIFE's, oh my!
+
+Applied some functional programming concepts to the codebase.
+
+Eliminated some for loops.
+Used .map() where  transforming one collection into another.
+Enclosed the contents of each script file in an IIFE, that exports any interface methods.
+Used templates to avoid repetition of HTML structure. Use .map() to convert collections of data into collections of DOM nodes.
+
 # Update 11 - Single-Page Apps
 
 As a user updated this site to be a Single Page Application (SPA) by using the page.js library to capture clicks and 
