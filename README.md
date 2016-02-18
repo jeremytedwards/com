@@ -19,26 +19,24 @@ by page.js.
 Keep the code organized in a M-V-C structure that isolates data management from presentation layer, from the controller 
 that holds it all together. 
 
-# Update 13 - 
-## User Stories: MVP
+# Update 12 - REST and API's
 
-As a developer, I want my portfolio to run in a development environment that closely matches production, so that I can reduce bugs related to infrastructure surprises.
+Created a controller that includes a call to the Github API. This call grabs data about my individual account, and renders 
+portions of the returned content to the page, once the data has been loaded. 
 
-You'll need to create a new Heroku app, and link it to your portfolio
+# Update 13 - Production Deployment
 
-As a site owner, I want my site running on a robust hosting platform, so that I don't have to hire a sysadmin.
+As a developer, I want my portfolio to run in a development environment that closely matches production, so that I can 
+reduce bugs related to infrastructure surprises.
 
-You'll need to get your app deployed and running on Heroku.
+Created a new Heroku app, and linked it to my portfolio
 
-Heroku will need to know what kind of app you are running, and how to run it.
+As a site owner, I wanted my site running on a robust hosting platform, so that I don't have to hire a sysadmin.
 
-You can create a new package.json file, or copy over `package.json` and `server.js` from the blog project.
+Created a new `package.json` and `server.js` file.
 
-As a developer, I want my secret tokens accessed only through environment variables, so that I can keep them secure.
+Deployed app on Heroku.
 
-You'll need to configure an environment variable on your production server, so the server.js file can access your token when it's running.
+As a developer, I wanted my secret tokens accessed only through environment variables, so that I could keep them secure.
 
-
-## User Stories: Stretch Goals
- 1. As a site owner, I want [www.my-own-domain-name.io] hooked up to my Heroku app, so that I don't have to explain to people how to spell "my-site-name.herokuapp.com" over the phone.
- - As a site owner, I want my root domain to redirect to the `www` subdomain, so people can type in either one to load my app.
+Created a Config Vars on Heroku to support this.
