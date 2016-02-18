@@ -1,0 +1,23 @@
+{
+  "author": "Jeremy T Edwards",
+  "license": "ISC",
+  "name": "codefellows-jeremytedwards",
+  "version": "2.0.3",
+  "description": "A portfolio project for Jeremy T Edwards",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "compilerOptions": {
+    "module": "commonjs",
+    "target": "es5",
+    "sourceMap": true
+  },
+  "dependencies": {
+    "express": "^4.13.3",
+    "express-request-proxy": "^1.0.10"
+  },
+  "exclude": [
+    "node_modules"
+  ]
+}
