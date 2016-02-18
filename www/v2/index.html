@@ -4,7 +4,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Jeremy Edwards Project Protfolio</title>
+    <title>Jeremy Edwards Project Portfolio</title>
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/b-styles.css" />
@@ -62,17 +62,29 @@
         <nav class="main-nav">
             <div class="icon-menu"></div>
             <ul>
-                <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
+                <li class="tab" data-content="index"><a href="/" class="icon-home"> Home</a></li>
+                <li class="tab" data-content="portfolio"><a href="/portfolio" class="icon-plus"> Portfolio</a></li>
                 <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
-                <li><a href="http://twitter.com/mini338" target="_blank" class="icon-twitter3"> Twitter</a></li>
-                <li><a href="http://github.com/jeremytedwards" target="_blank" class="icon-github"> GitHub</a></li>
+                <li><a href="https://twitter.com/jeremytedwards" target="_blank" class="icon-twitter3"> Twitter</a></li>
+                <li class="tab" data-content="github"><a href="/github" class ="icon-github"> GitHub</a></li>
             </ul>
         </nav>
     </header>
 
     <main class="clearfix" >
+
+        <section id="intro" class="tab-content">
+            <h1>Introduction</h1>
+            <p>This is a little bit about me...</p>
+        </section>
+
+        <section id="about" class="tab-content" >
+            <h1>About</h1>
+            <p>The about section</p>
+        </section>
+
         <section class="card-preloader">
-            <!-- buildDeck: initializeing -->
+            <!-- buildDeck: initializing -->
             <h1>Cards loading...</h1>
         </section>
 
@@ -80,6 +92,17 @@
             <!-- buildDeck: complete -->
 
             <!--Insert: Handlebars: card-template -->
+        </section>
+
+        <section id="github" class="tab-content">
+            <header>
+                <h1>Here is a list of Projects on <a href="http://github.com/jeremytedwards" target="_blank" class="icon-github"> GitHub</a>:</h1>
+            </header>
+            <section>
+                <ul>
+                    <li>Loading GitHub Project List...</li>
+                </ul>
+            </section>
         </section>
 
         <section class="flickr">
@@ -174,17 +197,28 @@
 
     <script src="js/vendor/marked.js"></script>
     <script src="js/vendor/page.js"></script>
+
     <script src="js/cards/cardBuildTemplate.js"></script>
     <script src="js/cards/cardDealer.js"></script>
+
+    <script src="js/github/github.js"></script>
+    <script src="js/github/githubView.js"></script>
 
     <!-- temp jQuery for Foundation -->
     <!--<script src="js/vendor/jquery.js"></script>-->
     <!--<script src="js/foundation.min.js"></script>-->
 
+    <!-- Page.JS - Route & Controllers -->
+    <script src="js/aboutController.js"></script>
+    <script src="js/portfolioController.js"></script>
+    <script src="js/indexController.js"></script>
+    <script src="js/githubController.js"></script>
+
+    <script src="js/routes.js"></script>
+
     <!-- run page init -->
     <script>
         $(document).foundation();
-        Card.buildDeck();
     </script>
 </body>
 </html>
