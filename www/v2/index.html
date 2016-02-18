@@ -3,13 +3,28 @@
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Title</title>
 
-    <link src="css/reset.css"></link>
-    <link src="css/b-styles.css"></link>
+    <title>Jeremy Edwards Project Protfolio</title>
 
+    <link rel="stylesheet" href="css/normalize.css" />
+    <link rel="stylesheet" href="css/b-styles.css" />
+
+    <!-- foundation -->
     <link rel="stylesheet" href="css/foundation.min.css" />
     <script src="js/vendor/modernizr.js"></script>
+
+    <!-- Handlebars.js: card-template -->
+    <script id="card-template" type="text/x-handlebars-template">
+        <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+            <h1>{{title}}</h1>
+            <div class="author">
+                By <address><a href="{{authorUrl}}">{{author}}</a></address>
+                {{publishStatus}}
+            </div>
+            <section class="card-body">{{{body}}}</section>
+            <a href="#" class="read-on">Read on &rarr;</a>
+        </article>
+    </script>
 </head>
 <body>
     <header>
@@ -18,14 +33,33 @@
     </header>
 
     <main>
-        <div>Load cards here</div>
+        <section id="deck-template" class="tab-content">
+            <!-- buildDeck: initializeing -->
+            <h1>Cards loading...</h1>
 
-        <a data-flickr-embed="true"  href="https://www.flickr.com/photos/capitanbentley/albums/72157662286338174" title="bubbles"><img src="https://farm7.staticflickr.com/6085/6075216527_66c5a706d0_z.jpg" width="640" height="427" alt="bubbles"></a>
-        <script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>
+            <!-- buildDeck: complete -->
+            <div>
+                <ul id="filters">
+                    <li>
+                        <select id="category-filter">
+                            <option value="">-- Filter by Categories --</option>
+                        </select>
+                    </li>
+                </ul>
+            </div>
 
-        <div class="popForm">    <!-- Start popForm  -->
-            <h5>Sample Form</h5>
+            <!--Insert: Handlebars: Cards Template -->
+        </section>
+
+        <section class="flickr">
+            <!--<a data-flickr-embed="true"  href="https://www.flickr.com/photos/capitanbentley/albums/72157662286338174" title="bubbles"><img src="https://farm7.staticflickr.com/6085/6075216527_66c5a706d0_z.jpg" width="640" height="427" alt="bubbles"></a>-->
+        </section>
+
+        <section class="popForm">
+            <!-- Start popForm  -->
             <form>
+                <h5>Sample Form</h5>
+
                 <div class="row">
                     <div class="large-4 medium-4 columns">
                         <label>First Name</label>
@@ -53,19 +87,21 @@
                         <label>Choose your favorite coffee shop</label>
                         <select>
                             <option value="vivace">Vivace</option>
-                            <option value="starbuck">Starbucks</option>
+                            <option value="starbucks">Starbucks</option>
                             <option value="broadcast">Broadcast</option>
                             <option value="voxx">Voxx</option>
-                            <option value="unlisted">Unlisted</option>
+                            <option value="unlisted" selected>Unlisted</option>
                         </select>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="large-12 columns">
                         <label>My coffee shop was unlisted, try this one:</label>
                         <input type="text" placeholder="Best coffee shop ever" />
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="large-6 medium-6 columns">
                         <label>Coke or Pepsi</label>
@@ -78,6 +114,7 @@
                         <input id="checkbox2" type="checkbox"><label for="checkbox2">No</label>
                     </div>
                 </div>
+
                 <div class="row">
                     <div class="large-12 columns">
                         <label>Tell me about your mother...</label>
@@ -88,14 +125,34 @@
                     </div>
                 </div>
             </form>
-            </div>
-        </div> <!-- End popForm -->
+            <!-- End popForm -->
+        </section>
+
+        <footer>
+            <section id="footer">
+                <p>&copy; 2016 The World Wide Web</p>
+            </section>
+        </footer>
     </main>
 
-    <script src="js/vendor/jquery.js"></script>
+    <!-- scripts -->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
+    <!--<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>-->
+
+    <script src="js/vendor/marked.js"></script>
+    <script src="js/cards/cardBuildTemplate.js"></script>
+    <script src="js/cards/cardDealer.js"></script>
+
+    <!-- temp jQuery for Foundation -->
+    <!--<script src="js/vendor/jquery.js"></script>-->
     <script src="js/foundation.min.js"></script>
+
+    <!-- run page init -->
     <script>
         $(document).foundation();
+        Card.buildDeck();
     </script>
 </body>
 </html>
