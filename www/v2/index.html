@@ -8,14 +8,17 @@
 
     <link rel="stylesheet" href="css/normalize.css" />
     <link rel="stylesheet" href="css/b-styles.css" />
+    <link rel="stylesheet" href="css/b-icons.css" />
+    <link rel="stylesheet" href="css/l-card.css" />
+    <link rel="stylesheet" href="css/l-navigation.css" />
 
     <!-- foundation -->
-    <link rel="stylesheet" href="css/foundation.min.css" />
+    <!--<link rel="stylesheet" href="css/foundation.min.css" />-->
     <script src="js/vendor/modernizr.js"></script>
 
     <!-- Handlebars.js: card-template -->
     <script id="card-template" type="text/x-handlebars-template">
-        <article class="clearfix" data-author="{{author}}" data-category="{{category}}">
+        <article class="card clearfix" data-author="{{author}}" data-category="{{category}}">
             <h1>{{title}}</h1>
             <div class="author">
                 By <address><a href="{{authorUrl}}">{{author}}</a></address>
@@ -25,30 +28,58 @@
             <a href="#" class="read-on">Read on &rarr;</a>
         </article>
     </script>
+
+    <!-- Handlebars.js: stats-template -->
+    <script id="stats-template" type="text/x-handlebars-template">
+        <li><strong>{{name}}</strong>: {{count}} words written</li>
+    </script>
 </head>
 <body>
     <header>
-        <div class="icon">J</div>
-        <h5>Jeremy Edwards</h5>
-    </header>
+        <div class="id">
+            <h1>Jeremy Edwards</h1>
+        </div>
 
-    <main>
-        <section id="deck-template" class="tab-content">
-            <!-- buildDeck: initializeing -->
-            <h1>Cards loading...</h1>
-
-            <!-- buildDeck: complete -->
+        <div id="blog-stats">
             <div>
-                <ul id="filters">
-                    <li>
-                        <select id="category-filter">
-                            <option value="">-- Filter by Categories --</option>
-                        </select>
-                    </li>
-                </ul>
+                <section id="filters" class="tab_content">
+                    <select id="category_filter">
+                        <option value="">-- Filter by Categories --</option>
+                    </select>
+                </section>
             </div>
 
-            <!--Insert: Handlebars: Cards Template -->
+            <h2>Author Stats</h2>
+            <dt>Total articles:</dt> <dd class="articles"></dd>
+            <dt>Total words:</dt> <dd class="words"></dd>
+
+            <ul class="author-stats">
+                <!-- Insert: Handlebars: card-template -->
+
+            </ul>
+        </div>
+
+        <nav class="main-nav">
+            <div class="icon-menu"></div>
+            <ul>
+                <li class="tab" data-content="articles"><a href="/" class="icon-home"> Home</a></li>
+                <li class="tab" data-content="about"><a href="/about" class="icon-address-book"> About</a></li>
+                <li><a href="http://twitter.com/mini338" target="_blank" class="icon-twitter3"> Twitter</a></li>
+                <li><a href="http://github.com/jeremytedwards" target="_blank" class="icon-github"> GitHub</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main class="clearfix" >
+        <section class="card-preloader">
+            <!-- buildDeck: initializeing -->
+            <h1>Cards loading...</h1>
+        </section>
+
+        <section id="deck-template" class="tab-content">
+            <!-- buildDeck: complete -->
+
+            <!--Insert: Handlebars: card-template -->
         </section>
 
         <section class="flickr">
@@ -127,27 +158,28 @@
             </form>
             <!-- End popForm -->
         </section>
-
-        <footer>
-            <section id="footer">
-                <p>&copy; 2016 The World Wide Web</p>
-            </section>
-        </footer>
     </main>
+
+    <footer class="clearfix" >
+        <section id="footer">
+            <p>&copy; 2016 The World Wide Web</p>
+        </section>
+    </footer>
 
     <!-- scripts -->
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/2.2.0/jquery.min.js"></script>
-    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>-->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/foundation/6.1.2/foundation.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/handlebars.js/4.0.5/handlebars.min.js"></script>
     <!--<script async src="//embedr.flickr.com/assets/client-code.js" charset="utf-8"></script>-->
 
     <script src="js/vendor/marked.js"></script>
+    <script src="js/vendor/page.js"></script>
     <script src="js/cards/cardBuildTemplate.js"></script>
     <script src="js/cards/cardDealer.js"></script>
 
     <!-- temp jQuery for Foundation -->
     <!--<script src="js/vendor/jquery.js"></script>-->
-    <script src="js/foundation.min.js"></script>
+    <!--<script src="js/foundation.min.js"></script>-->
 
     <!-- run page init -->
     <script>
